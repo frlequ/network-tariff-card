@@ -1,9 +1,10 @@
 {
   "name": "Network Tariff Card",
+  "render_readme": true,
+  "filename": "src/network-tariff-card.js"
   "url": "https://github.com/frlequ/network-tariff-card",
   "description": "Network tariff card for showing current tariff in a 24-hour display.",
   "version": "1.0.0",
   "slug": "network-tariff-card",
-  "dev": true,
   "supports": ["homeassistant"]
 }
