@@ -13,12 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3  # Updated to v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3  # Updated to v3
+        uses: actions/setup-node@v3  # No change needed here; this is already v3
         with:
-          node-version: '16' # Specify the Node.js version you need
+          node-version: '20'  # Use Node.js version 20
 
       - name: Install dependencies
         run: npm install
@@ -27,7 +27,7 @@ jobs:
         run: npm run build
 
       - name: Upload Compiled Files
-        uses: actions/upload-artifact@v3  # Updated to v3
+        uses: actions/upload-artifact@v3  # Already updated to v3
         with:
           name: compiled-files
           path: dist/
