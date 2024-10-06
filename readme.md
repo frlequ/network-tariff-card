@@ -1,8 +1,9 @@
-# Network Tariff Card
+# Network Tariff Card for Home Assistant
+A custom card for Home Assistant that visually displays the current electricity tariff block in a circled 24-hour clock format. This card allows customization of colors for different tariff blocks and offers the option to show or hide the hour labels.
 
 ![Network Tariff Card](https://github.com/frlequ/network-tariff-card/blob/main/assets/network-tariff-card.jpg)
 
-A custom card for Home Assistant that visually displays the current electricity tariff block in a circled 24-hour clock format. This card allows customization of colors for different tariff blocks and offers the option to show or hide the hour labels.
+
 
 ## Features
 
@@ -11,17 +12,17 @@ A custom card for Home Assistant that visually displays the current electricity 
 - **Customizable Colors**: Set different colors for each tariff block to easily distinguish between them.
 - **Toggle Hour Labels**: Option to show or hide hour text for a cleaner design.
 
+
+> [!NOTE]
+> Please ensure you are using the latest version of the custom component **[Home Assistant Network Tariff](https://github.com/frlequ/home-assistant-network-tariff)**. This card is designed to work with this component.
+
 ## Installation
-
-### Prerequisites
-
 Ensure you have [HACS](https://hacs.xyz/) installed in your Home Assistant.
 
-### Important Note
+### Method 1 _(easiest)_:
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=frlequ&repository=network-tariff-card&category=dashboard)
 
-Please ensure you are using the latest version of the custom component **[Home Assistant Network Tariff](https://github.com/frlequ/home-assistant-network-tariff)**. This card is designed to work with this component.
-
-### Steps
+### Method 2: 
 
 1. **Add Repository**:
    - Go to HACS in Home Assistant.
@@ -37,16 +38,18 @@ Please ensure you are using the latest version of the custom component **[Home A
    - Click on "Add Card" and choose "Manual."
    - Use the following configuration:
 
-### Configuration
+## Configuration
+   Basic configuration. Please keep in mind that this card only supports the home-assistant-network-tariff custom component.
    ```yaml
       type: custom:network-tariff-card
       entity: sensor.elektro_network_tariff
       name: Trenutni blok
    ```
 
-### Customize
+## Customize
+   You can hide numeric hours, change outer and inner radius, color-code your own colors.
    ```yaml
-      showHours: true
+      showHours: false
       outerRadius: 40
       innerRadius: 32
       colorMap:
