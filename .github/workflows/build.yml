@@ -16,20 +16,18 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3  # Updated to v3
         with:
-          node-version: '16' # Specify the Node.js version
+          node-version: '16' # Specify the Node.js version you need
 
       - name: Install dependencies
-        run: |
-          npm install -g typescript
-          npm install
+        run: npm install
 
       - name: Compile TypeScript
-        run: npx tsc
+        run: npm run build
 
       - name: Upload Compiled Files
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3  # Updated to v3
         with:
           name: compiled-files
           path: dist/
