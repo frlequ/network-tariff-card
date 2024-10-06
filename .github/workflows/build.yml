@@ -13,21 +13,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3  # This should already be the latest version
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3  # This should also already be the latest version
+        uses: actions/setup-node@v3
         with:
           node-version: '20'  # Use Node.js version 20
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci  # Use npm ci for better reliability in CI/CD
 
       - name: Compile TypeScript
         run: npm run build
 
       - name: Upload Compiled Files
-        uses: actions/upload-artifact@v3  # Ensure this is using the latest version
+        uses: actions/upload-artifact@v3
         with:
           name: compiled-files
           path: dist/
