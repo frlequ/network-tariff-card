@@ -3,7 +3,5 @@
   "render_readme": true,
   "filename": "src/network-tariff-card.js",
   "url": "https://github.com/frlequ/network-tariff-card",
-  "version": "1.0.0",
-  "slug": "network-tariff-card",
-  "supports": ["homeassistant"]
+  "version": "1.0.0"
 }
