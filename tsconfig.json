@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es5",                      // Specify ECMAScript target version
+    "module": "commonjs",                 // Specify module code generation
+    "outDir": "./dist",                   // Redirect output structure to the dist folder
+    "rootDir": "./src",                   // Specify the root directory of input files
+    "strict": true,                        // Enable all strict type-checking options
+    "esModuleInterop": true,               // Enables emit interoperability between CommonJS and ES Modules
+    "skipLibCheck": true,                  // Skip type checking of declaration files
+    "allowJs": true                        // Allow JavaScript files to be compiled
+  },
+  "include": ["src/**/*"],                 // Include all files in the src directory (including .js files)
+  "exclude": ["node_modules", "**/*.spec.ts"]  // Exclude node_modules and test files
+}
