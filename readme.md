@@ -1,6 +1,6 @@
 # Network Tariff Card
 
-![Network Tariff Card](https://example.com/image.png)
+![Network Tariff Card](https://github.com/frlequ/network-tariff-card/blob/main/assets/network-tariff-card.jpg)
 
 A custom card for Home Assistant that visually displays the current electricity tariff block in a circled 24-hour clock format. This card allows customization of colors for different tariff blocks and offers the option to show or hide the hour labels.
 
@@ -37,13 +37,22 @@ Please ensure you are using the latest version of the custom component **[Home A
    - Click on "Add Card" and choose "Manual."
    - Use the following configuration:
 
+### Configuration
    ```yaml
-   type: custom:network-tariff-card
-   entity: sensor.elektro_network_tariff
-   show_hours: true  # Set to false to hide hour labels
-   colors:
-     - block1: "#FF0000"  # Color for tariff block 1
-     - block2: "#00FF00"  # Color for tariff block 2
-     - block3: "#0000FF"  # Color for tariff block 3
-     - block4: "#FFFF00"  # Color for tariff block 4
-     - block5: "#FF00FF"  # Color for tariff block 5
+      type: custom:network-tariff-card
+      entity: sensor.elektro_network_tariff
+      name: Trenutni blok
+   ```
+
+### Customize
+   ```yaml
+      showHours: true
+      outerRadius: 40
+      innerRadius: 32
+      colorMap:
+        1: '#03045e'
+        2: '#0077b6'
+        3: '#00b4d8'
+        4: '#90e0ef'
+        5: '#caf0f8'
+   ```  
