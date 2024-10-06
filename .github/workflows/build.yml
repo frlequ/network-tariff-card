@@ -1,4 +1,4 @@
-name: Build TypeScript
+name: Debug Build
 
 on:
   push:
@@ -18,16 +18,10 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'  # Use Node.js version 20
+          node-version: '20'
 
-      - name: Install dependencies
-        run: npm ci  # Use npm ci for better reliability in CI/CD
+      - name: Check Node.js version
+        run: node -v
 
-      - name: Compile TypeScript
-        run: npm run build
-
-      - name: Upload Compiled Files
-        uses: actions/upload-artifact@v3
-        with:
-          name: compiled-files
-          path: dist/
+      - name: Check npm version
+        run: npm -v
