@@ -1,7 +1,5 @@
 {
   "name": "Network Tariff Card",
   "render_readme": true,
-  "filename": "src/network-tariff-card.js",
-  "url": "https://github.com/frlequ/network-tariff-card",
-  "version": "1.0.0"
+  "filename": "src/network-tariff-card.js"
 }
