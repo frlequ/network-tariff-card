@@ -49,36 +49,37 @@ Ensure you have [HACS](https://hacs.xyz/) installed in your Home Assistant.
 
 ## Customize
    You can hide numeric hours, change outer and inner radius, color-code your own colors.
-   ```yaml
-		type: custom:network-tariff-card
-		entity: sensor.elektro_network_tariff
-		name: Trenutni Blok
-		outerRadius: 40
-		innerRadius: 35
-		showHours: false
-		offsetHours: true
-		colorMap:
-		  '1': '#660000'
-		  '2': '#660000'
-		  '3': '#cc3333'
-		  '4': '#d0db24'
-		  '5': '#37c85a'
-		card_mod:
-		  style: |
-			ha-card .tariffcard{
-			  width: calc(100% - 10px);
-			  height: calc(100% - 10px);
-			  padding: 5px !important;
-			}
-			ha-card .circle-container .state{
-			  color:gray !important;
-			}
-			ha-card .tariffcard .name{
-			  color:gray !important;
-
-			}
-   ```  
+   
    ![Network Tariff Card](https://github.com/frlequ/network-tariff-card/blob/main/assets/network-tariff-card_custom.jpg)
+   ```yaml
+	type: custom:network-tariff-card
+	entity: sensor.elektro_network_tariff
+	name: Trenutni Blok
+	outerRadius: 40
+	innerRadius: 35
+	showHours: false
+	offsetHours: true
+	colorMap:
+	  '1': '#660000'
+	  '2': '#660000'
+	  '3': '#cc3333'
+	  '4': '#d0db24'
+	  '5': '#37c85a'
+	card_mod:
+	  style: |
+	    ha-card .tariffcard{
+	    width: calc(100% - 10px);
+	    height: calc(100% - 10px);
+	    padding: 5px !important;
+	    }
+	    ha-card .circle-container .state{
+	      color:gray !important;
+	    }
+	    ha-card .tariffcard .name{
+	      color:gray !important;
+	    }
+   ```  
+
    
 ## Report any issues
 
