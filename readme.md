@@ -11,7 +11,8 @@ A custom card for Home Assistant that visually displays the current electricity 
 - **24-Hour Clock Format**: Visual representation of the tariff blocks in a circular layout.
 - **Customizable Colors**: Set different colors for each tariff block to easily distinguish between them.
 - **Toggle Hour Labels**: Option to show or hide hour text for a cleaner design.
-
+- **Offset Hour Labels**: Option to rotate and align hour labels.
+- **Card-mod support**: Customize your card.
 
 > [!NOTE]
 > Please ensure you are using the latest version of the custom component **[Home Assistant Network Tariff](https://github.com/frlequ/home-assistant-network-tariff)**. This card is designed to work with this component.
@@ -49,16 +50,36 @@ Ensure you have [HACS](https://hacs.xyz/) installed in your Home Assistant.
 ## Customize
    You can hide numeric hours, change outer and inner radius, color-code your own colors.
    ```yaml
-      showHours: false
-      outerRadius: 40
-      innerRadius: 32
-      colorMap:
-        1: '#03045e'
-        2: '#0077b6'
-        3: '#00b4d8'
-        4: '#90e0ef'
-        5: '#caf0f8'
+		type: custom:network-tariff-card
+		entity: sensor.elektro_network_tariff
+		name: Trenutni Blok
+		outerRadius: 40
+		innerRadius: 35
+		showHours: false
+		offsetHours: true
+		colorMap:
+		  '1': '#660000'
+		  '2': '#660000'
+		  '3': '#cc3333'
+		  '4': '#d0db24'
+		  '5': '#37c85a'
+		card_mod:
+		  style: |
+			ha-card .tariffcard{
+			  width: calc(100% - 10px);
+			  height: calc(100% - 10px);
+			  padding: 5px !important;
+			}
+			ha-card .circle-container .state{
+			  color:gray !important;
+			}
+			ha-card .tariffcard .name{
+			  color:gray !important;
+
+			}
    ```  
+   ![Network Tariff Card](https://github.com/frlequ/network-tariff-card/blob/main/assets/network-tariff-card_custom.jpg)
+   
 ## Report any issues
 
 Thanks and consider giving me a 🌟 star
