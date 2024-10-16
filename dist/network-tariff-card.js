@@ -46,7 +46,6 @@ class NetworkTariffCard extends LitElement {
                 return false; // Default to true if offsetHours is not present
             })(), outerRadius: config.outerRadius || 40, innerRadius: config.innerRadius || 32, name: config.name || '', colorMap: Object.assign({}, config.colorMap // User-defined colors will overwrite defaults
             ) }, config);
-        //this.attachShadow({ mode: 'open' });
     }
     // The createSegment function now calculates each path segment of the donut chart
     createSegment(i, totalSegments, outerRadius, innerRadius, strokeColor, strokeWidth, textColor, offsetHours, showHours) {
@@ -81,6 +80,13 @@ class NetworkTariffCard extends LitElement {
 		  ${showHours ? `<text x="${labelX}" y="${labelY}" fill="${textColor}" font-size="5" text-anchor="middle" alignment-baseline="middle">${i + 1}</text>` : ''}
 		`;
     }
+    // Check if 'hass' has changed
+    updated(changedProperties) {
+        if (changedProperties.has('hass')) {
+            this.firstUpdated(); // Call update whenever 'hass' changes
+        }
+    }
+    // Draw SVG
     firstUpdated() {
         const svg = this.shadowRoot.querySelector(".circle-clock");
         // Access the entity from Home Assistant's hass object
@@ -177,3 +183,4 @@ NetworkTariffCard.styles = css `
 		}
 	  `;
 customElements.define('network-tariff-card', NetworkTariffCard);
+console.info("%c  NETWORK-TARIFF-CARD  %c  Version: " + "v1.0.4".padEnd(7, " "), "color: orange; font-weight: bold; background: black", "color: white; font-weight: bold; background: dimgray");
