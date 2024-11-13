@@ -1,4 +1,7 @@
-import { LitElement, html, css, } from "https://unpkg.com/lit-element@2.0.1/lit-element.js?module";
+//import { LitElement, html, css, } from "https://unpkg.com/lit-element@2.0.1/lit-element.js?module";
+import { LitElement, html, css } from 'lit';
+import { customElement, property } from 'lit/decorators.js';
+
 class NetworkTariffCard extends LitElement {
     constructor() {
         super(...arguments);
@@ -187,4 +190,4 @@ NetworkTariffCard.styles = css `
 		}
 	  `;
 customElements.define('network-tariff-card', NetworkTariffCard);
-console.info("%c  NETWORK-TARIFF-CARD  %c  Version: " + "v1.0.4".padEnd(7, " "), "color: orange; font-weight: bold; background: black", "color: white; font-weight: bold; background: dimgray");
+console.info("%c  NETWORK-TARIFF-CARD  %c  Version: " + "v1.0.5".padEnd(7, " "), "color: orange; font-weight: bold; background: black", "color: white; font-weight: bold; background: dimgray");
